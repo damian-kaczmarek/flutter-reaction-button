@@ -71,6 +71,8 @@ class _ItemState extends State<Item> with AutomaticKeepAliveClientMixin {
                           print(
                               'Selected value: $value, isChecked: $isChecked');
                         },
+                        boxTopPositionVerticalOffset: 21,
+                        reactionSize: 87,
                         reactions: widget.reactions,
                         initialReaction: Example.defaultInitialReaction,
                         selectedReaction: widget.reactions[1],

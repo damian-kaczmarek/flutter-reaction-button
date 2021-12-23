@@ -22,6 +22,12 @@ class ReactionButtonToggle<T> extends StatefulWidget {
   /// Position reactions box for the button [default = TOP]
   final Position boxPosition;
 
+  /// Vertical offset of reaction box from button position when Position.TOP is used
+  final double? boxTopPositionVerticalOffset;
+
+  /// Reaction size passed manually
+  final double? reactionSize;
+
   /// Reactions box color [default = white]
   final Color boxColor;
 
@@ -54,6 +60,8 @@ class ReactionButtonToggle<T> extends StatefulWidget {
     this.initialReaction,
     this.selectedReaction,
     this.boxPosition = Position.TOP,
+    this.boxTopPositionVerticalOffset,
+    this.reactionSize,
     this.boxColor = Colors.white,
     this.boxElevation = 5,
     this.boxRadius = 50,
@@ -141,6 +149,8 @@ class _ReactionButtonToggleState<T> extends State<ReactionButtonToggle<T>> {
           return ReactionsBox(
             buttonOffset: buttonOffset,
             buttonSize: buttonSize,
+            boxTopPositionVerticalOffset: widget.boxTopPositionVerticalOffset,
+            reactionSize: widget.reactionSize,
             reactions: widget.reactions,
             position: widget.boxPosition,
             color: widget.boxColor,

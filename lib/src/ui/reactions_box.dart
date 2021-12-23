@@ -14,6 +14,10 @@ class ReactionsBox extends StatefulWidget {
 
   final Size buttonSize;
 
+  final double? boxTopPositionVerticalOffset;
+
+  final double? reactionSize;
+
   final List<Reaction?> reactions;
 
   final Position position;
@@ -38,6 +42,8 @@ class ReactionsBox extends StatefulWidget {
     required this.buttonSize,
     required this.reactions,
     required this.position,
+    this.boxTopPositionVerticalOffset,
+    this.reactionSize,
     this.color = Colors.white,
     this.elevation = 5,
     this.radius = 50,
@@ -261,7 +267,13 @@ class _ReactionsBoxState extends State<ReactionsBox>
   }
 
   double _getTopPosition() {
-    return widget.buttonOffset.dy - (widget.buttonSize.height * 5);
+    var offset;
+    if (widget.boxTopPositionVerticalOffset != null) {
+      offset = widget.boxTopPositionVerticalOffset! + (widget.reactionSize ?? 0) + widget.buttonSize.height;
+    } else {
+      offset = widget.buttonSize.height * 5;
+    }
+    return widget.buttonOffset.dy - offset;
   }
 
   double _getBottomPosition() {

@@ -62,12 +62,12 @@ class _MyAppState extends State<MyApp> {
                 Item(
                   'image 2',
                   'assets/images/img2.jpg',
-                  Example.reactions,
+                  Example.reactionsSmall,
                 ),
                 Item(
                   'image 3',
                   'assets/images/img3.jpg',
-                  Example.reactions,
+                  Example.reactionsBig,
                 ),
                 Item(
                   'image 4',

@@ -4,32 +4,27 @@ import 'package:flutter_reaction_button/flutter_reaction_button.dart';
 List<Reaction<String>> flagsReactions = [
   Reaction<String>(
     value: 'en',
-    previewIcon: _builFlagsdPreviewIcon(
-        'assets/images/united-kingdom-round.png', 'English'),
+    previewIcon: _builFlagsdPreviewIcon('assets/images/united-kingdom-round.png', 'English'),
     icon: _buildIcon('assets/images/united-kingdom.png'),
   ),
   Reaction<String>(
     value: 'ar',
-    previewIcon:
-        _builFlagsdPreviewIcon('assets/images/algeria-round.png', 'Arabic'),
+    previewIcon: _builFlagsdPreviewIcon('assets/images/algeria-round.png', 'Arabic'),
     icon: _buildIcon('assets/images/algeria.png'),
   ),
   Reaction<String>(
     value: 'gr',
-    previewIcon:
-        _builFlagsdPreviewIcon('assets/images/germany-round.png', 'German'),
+    previewIcon: _builFlagsdPreviewIcon('assets/images/germany-round.png', 'German'),
     icon: _buildIcon('assets/images/germany.png'),
   ),
   Reaction<String>(
     value: 'sp',
-    previewIcon:
-        _builFlagsdPreviewIcon('assets/images/spain-round.png', 'Spanish'),
+    previewIcon: _builFlagsdPreviewIcon('assets/images/spain-round.png', 'Spanish'),
     icon: _buildIcon('assets/images/spain.png'),
   ),
   Reaction<String>(
     value: 'ch',
-    previewIcon:
-        _builFlagsdPreviewIcon('assets/images/china-round.png', 'Chinese'),
+    previewIcon: _builFlagsdPreviewIcon('assets/images/china-round.png', 'Chinese'),
     icon: _buildIcon('assets/images/china.png'),
   ),
 ];
@@ -39,92 +34,96 @@ final defaultInitialReaction = Reaction<String>(
   icon: Text('No raction'),
 );
 
-final reactions = [
-  Reaction<String>(
-    value: 'Happy',
-    title: _buildTitle('Happy'),
-    previewIcon: _buildReactionsPreviewIcon('assets/images/happy.png'),
-    icon: _buildReactionsIcon(
-      'assets/images/happy.png',
-      Text(
-        'Happy',
-        style: TextStyle(
-          color: Color(0XFF3b5998),
+final reactions = _generateReactions(40);
+final reactionsSmall = _generateReactions(20);
+final reactionsBig = _generateReactions(60);
+
+List<Reaction<String>> _generateReactions(double size) => [
+      Reaction<String>(
+        value: 'Happy',
+        title: _buildTitle('Happy'),
+        previewIcon: _buildReactionsPreviewIcon('assets/images/happy.png', size),
+        icon: _buildReactionsIcon(
+          'assets/images/happy.png',
+          Text(
+            'Happy',
+            style: TextStyle(
+              color: Color(0XFF3b5998),
+            ),
+          ),
         ),
       ),
-    ),
-  ),
-  Reaction<String>(
-    value: 'Angry',
-    title: _buildTitle('Angry'),
-    previewIcon: _buildReactionsPreviewIcon('assets/images/angry.png'),
-    icon: _buildReactionsIcon(
-      'assets/images/angry.png',
-      Text(
-        'Angry',
-        style: TextStyle(
-          color: Color(0XFFed5168),
+      Reaction<String>(
+        value: 'Angry',
+        title: _buildTitle('Angry'),
+        previewIcon: _buildReactionsPreviewIcon('assets/images/angry.png', size),
+        icon: _buildReactionsIcon(
+          'assets/images/angry.png',
+          Text(
+            'Angry',
+            style: TextStyle(
+              color: Color(0XFFed5168),
+            ),
+          ),
         ),
       ),
-    ),
-  ),
-  Reaction<String>(
-    value: 'In love',
-    title: _buildTitle('In love'),
-    previewIcon: _buildReactionsPreviewIcon('assets/images/in-love.png'),
-    icon: _buildReactionsIcon(
-      'assets/images/in-love.png',
-      Text(
-        'In love',
-        style: TextStyle(
-          color: Color(0XFFffda6b),
+      Reaction<String>(
+        value: 'In love',
+        title: _buildTitle('In love'),
+        previewIcon: _buildReactionsPreviewIcon('assets/images/in-love.png', size),
+        icon: _buildReactionsIcon(
+          'assets/images/in-love.png',
+          Text(
+            'In love',
+            style: TextStyle(
+              color: Color(0XFFffda6b),
+            ),
+          ),
         ),
       ),
-    ),
-  ),
-  Reaction<String>(
-    value: 'Sad',
-    title: _buildTitle('Sad'),
-    previewIcon: _buildReactionsPreviewIcon('assets/images/sad.png'),
-    icon: _buildReactionsIcon(
-      'assets/images/sad.png',
-      Text(
-        'Sad',
-        style: TextStyle(
-          color: Color(0XFFffda6b),
-        ),
-      ),
-    ),
-  ),
-  Reaction<String>(
-    value: 'Surprised',
-    title: _buildTitle('Surprised'),
-    previewIcon: _buildReactionsPreviewIcon('assets/images/surprised.png'),
-    icon: _buildReactionsIcon(
-      'assets/images/surprised.png',
-      Text(
-        'Surprised',
-        style: TextStyle(
-          color: Color(0XFFffda6b),
-        ),
-      ),
-    ),
-  ),
-  Reaction<String>(
-    value: 'Mad',
-    title: _buildTitle('Mad'),
-    previewIcon: _buildReactionsPreviewIcon('assets/images/mad.png'),
-    icon: _buildReactionsIcon(
-      'assets/images/mad.png',
-      Text(
-        'Mad',
-        style: TextStyle(
-          color: Color(0XFFf05766),
-        ),
-      ),
-    ),
-  ),
-];
+      // Reaction<String>(
+      //   value: 'Sad',
+      //   title: _buildTitle('Sad'),
+      //   previewIcon: _buildReactionsPreviewIcon('assets/images/sad.png', size),
+      //   icon: _buildReactionsIcon(
+      //     'assets/images/sad.png',
+      //     Text(
+      //       'Sad',
+      //       style: TextStyle(
+      //         color: Color(0XFFffda6b),
+      //       ),
+      //     ),
+      //   ),
+      // ),
+      // Reaction<String>(
+      //   value: 'Surprised',
+      //   title: _buildTitle('Surprised'),
+      //   previewIcon: _buildReactionsPreviewIcon('assets/images/surprised.png', size),
+      //   icon: _buildReactionsIcon(
+      //     'assets/images/surprised.png',
+      //     Text(
+      //       'Surprised',
+      //       style: TextStyle(
+      //         color: Color(0XFFffda6b),
+      //       ),
+      //     ),
+      //   ),
+      // ),
+      // Reaction<String>(
+      //   value: 'Mad',
+      //   title: _buildTitle('Mad'),
+      //   previewIcon: _buildReactionsPreviewIcon('assets/images/mad.png', size),
+      //   icon: _buildReactionsIcon(
+      //     'assets/images/mad.png',
+      //     Text(
+      //       'Mad',
+      //       style: TextStyle(
+      //         color: Color(0XFFf05766),
+      //       ),
+      //     ),
+      //   ),
+      // ),
+    ];
 
 Padding _builFlagsdPreviewIcon(String path, String text) {
   return Padding(
@@ -164,10 +163,10 @@ Container _buildTitle(String title) {
   );
 }
 
-Padding _buildReactionsPreviewIcon(String path) {
+Padding _buildReactionsPreviewIcon(String path, double size) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 3.5, vertical: 5),
-    child: Image.asset(path, height: 40),
+    child: Image.asset(path, height: size),
   );
 }
 
